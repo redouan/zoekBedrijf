@@ -1,0 +1,46 @@
+<h2 class="title">Profiel</h2>
+
+<table class="formulier">
+  <tr>
+    <td> Achternaam:</td>
+    <td> <%=h @user.last_name %></td>
+  </tr>
+
+  <tr>
+    <td> Voornaam:</td>
+    <td> <%=h @user.first_name %></td>
+  </tr>
+
+  <tr>
+    <td> Gebruiksnaam:</td>
+    <td> <%=h @user.username %></td>
+  </tr>
+
+  <tr>
+    <td> Adres:</td>
+    <td> <%=h @user.adres %></td>
+  </tr>
+
+  <tr>
+    <td> Postcode:</td>
+    <td> <%=h @user.post_code %></td>
+  </tr>
+
+  <tr>
+    <td> Plaats:</td>
+    <td> <%=h @user.plaats %></td>
+  </tr>
+
+  <tr>
+    <td> Tel:</td>
+    <td> <%=h @user.tel_nummer %></td>
+  </tr>
+  <tr>
+    <td class="red">
+      <%= link_to 'Bewerk profiel', edit_account_path %>
+    </td>
+  </tr>
+</table>
+
+
+

@@ -1,0 +1,18 @@
+<h2 class="title">Bewerk profiel</h2>
+<table class="formulier">
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <tr>
+    <td>
+
+    </td>
+    <td class="red">
+      <%= f.submit "Bewerk" %> | <%= link_to "Terug", :controller => 'profiels', :action => 'show' %>
+    </td>
+  </tr>
+  
+<% end %>
+
+
+</table>

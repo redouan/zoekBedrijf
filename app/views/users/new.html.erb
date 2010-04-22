@@ -1,0 +1,16 @@
+<h2 class="title">Registreren</h2>
+<table class="formulier">
+<% form_for @user, :url => account_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <tr>
+    <td>
+      
+    </td>
+    <td>
+      <%= f.submit "Opslaan" %>
+    </td>
+  </tr>
+</table>
+  
+<% end %>

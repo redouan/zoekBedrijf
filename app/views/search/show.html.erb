@@ -1,0 +1,40 @@
+<p>
+  <b>Naam:</b>
+  <%=h @bedrijf.naam %>
+</p>
+
+<p>
+  <b>Adres:</b>
+  <%=h @bedrijf.adres %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @bedrijf.postcode %>
+</p>
+
+<p>
+  <b>Plaats:</b>
+  <%=h @bedrijf.plaats %>
+</p>
+
+<p>
+  <b>Telnr:</b>
+  <%=h @bedrijf.telnr %>
+</p>
+
+<p>
+  <b>Faxnr:</b>
+  <%=h @bedrijf.faxnr %>
+</p>
+
+<p>
+  <b>Webadres:</b>
+  <%=h @bedrijf.webadres %>
+</p>
+<% for contact in @bedrijf.contacts %>
+<p>
+  <b>Contact:</b>
+    <%=h contact.contact_name %>
+</p>
+<% end %>

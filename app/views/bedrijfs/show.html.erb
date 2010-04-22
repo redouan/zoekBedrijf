@@ -1,0 +1,61 @@
+<h2 class="title">Bedrijf gegevens</h2>
+<table class="formulier">
+  <tr>
+    <td width="100">Naam:</td>
+    <td><%=h @bedrijf.naam %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Adres:</td>
+    <td><%=h @bedrijf.adres %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Postcode:</td>
+    <td><%=h @bedrijf.postcode %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Plaats:</td>
+    <td><%=h @bedrijf.plaats %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Telefoon:</td>
+    <td><%=h @bedrijf.telnr %></td>
+
+  </tr>
+  <tr>
+    <td>Fax:</td>
+    <td><%=h @bedrijf.faxnr %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Website:</td>
+    <td><%=h @bedrijf.webadres %></td>
+
+  </tr>
+  <tr>
+    <td width="100">KvK:</td>
+    <td><%=h @bedrijf.kvk %></td>
+
+  </tr>
+  <tr>
+    <td width="100">Status:</td>
+    <td><%=h @bedrijf.status %></td>
+
+  </tr>
+  <tr>
+
+    <% for contact in @bedrijf.contacts %>
+      <td width="100">Contact:</td>
+      <td><%=h contact.contact_name %></td>
+
+    <% end %>
+  </tr>
+  <tr>
+    <td class="red"><%= link_to 'Bewerk', edit_category_bedrijf_path(@category, @bedrijf) %> | <%= link_to 'Terug', category_bedrijfs_path %></td>
+    <td class="red"></td>
+  </tr>
+</table>
+

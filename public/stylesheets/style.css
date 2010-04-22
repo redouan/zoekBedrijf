@@ -1,0 +1,242 @@
+/* 
+    Document   : style
+    Created on : 19-apr-2010, 9:38:01
+    Author     : redouan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body {
+    background: #D3DCF2;
+    width: auto;
+}
+#site{
+    width:1024px;
+    height: 530px;
+    margin:auto;
+    margin-top: 0px;
+    background-color: #EAEAEB;
+}
+#logo{
+    /* background: url(../images/logo.png);*/
+    width: 1024px;
+    height: 100px;
+    background-color: black;
+
+}
+#logo_left{
+    width: 750px;
+    height: 100px;
+    float: left;
+    background: url(../images/logo.png);
+}
+#logo_right{
+    width: 274px;
+    height: 100px;
+    float: right;
+    
+}
+#menu{
+    width: 1024px;
+    height: 30px;
+    text-align: center;
+
+}
+#content{
+    width: auto;
+    height: 430px;
+}
+#foot{
+    margin:auto;
+    width: 1024px;
+    height: 70px;
+    background-color: black;
+}
+#notice{
+    text-align: center;
+    color: red;
+}
+
+table.login{
+    margin: auto;
+    margin-top: 70px;
+    color: black;
+}
+.formulier{
+    margin: auto;
+    color: black;
+}
+.info{
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+    font-size: 80%;
+}
+
+#midden{
+    width: 500px;
+    margin: auto;
+}
+.green a{
+    color: #062F68;
+    font-size: 120%;
+}
+.showEdit {
+    font-size: 60%;
+}
+.red a{
+    color: red;
+    text-decoration: none;
+}
+.welkom{
+    color: #062F68;
+    text-align: center;
+}
+
+.title{
+    color: #062F68;
+    text-align: center;
+}
+#tes{
+    width: 850px;
+    height: 300px;
+    margin: auto;
+
+}
+
+#nav
+{
+    background: url(../images/slice.jpg) repeat-x;
+    height: 30px;
+
+}
+#navigation
+{
+    margin: auto;
+    white-space:nowrap;
+    font-size: 100%;
+    padding-left: 400px;
+    
+}
+
+
+#navigation li{
+
+    float:left;
+    display:block;
+    list-style-type:none;
+    margin:7px;
+}
+
+#navigation li a
+{
+    display: block;
+    outline: none;
+    color: black;
+    float:left;
+    text-decoration: none;
+    width: auto;
+
+}
+#navigation a:hover {
+    display:block ;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+
+
+}
+
+.menu {
+	padding: 0;
+	list-style: none;
+}
+.menu li {
+	padding: 0;
+	margin: 0 2px;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.menu a {
+	padding: 14px 10px;
+	display: block;
+	color: #000000;
+	width: 144px;
+	text-decoration: none;
+	font-weight: bold;
+	background: url(../images/button.gif) no-repeat center center;
+}
+.menu li em {
+	background: url(../images/hover.png) no-repeat;
+	width: 180px;
+	height: 45px;
+	position: absolute;
+	top: -85px;
+	left: -15px;
+	text-align: center;
+	padding: 20px 12px 10px;
+	font-style: normal;
+	z-index: 2;
+	display: none;
+}
+.message_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 383px;
+}
+.message_list li {
+	padding: 0;
+	margin: 0;
+	background: url(../images/message-bar.gif) no-repeat;
+}
+.message_head {
+	padding: 5px 10px;
+	cursor: pointer;
+	position: relative;
+        margin: 0px;
+}
+.message_head .timestamp {
+	color: #666666;
+	font-size: 95%;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+.message_head cite {
+	font-size: 100%;
+	font-weight: bold;
+	font-style: normal;
+}
+.message_body {
+	padding: 5px 10px 15px;
+}
+.collapse_buttons {
+	text-align: right;
+	border-top: solid 1px #e4e4e4;
+	padding: 5px 0;
+	width: 383px;
+}
+.collapse_buttons a {
+	margin-left: 15px;
+	float: right;
+}
+.show_all_message {
+	background: url(../images/tall-down-arrow.gif) no-repeat right center;
+	padding-right: 12px;
+}
+.show_recent_only {
+	display: none;
+	background: url(../images/tall-up-arrow.gif) no-repeat right center;
+	padding-right: 12px;
+}
+.collpase_all_message {
+	background: url(../images/collapse-all.gif) no-repeat right center;
+	padding-right: 12px;
+	color: #666666;
+}

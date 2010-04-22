@@ -1,0 +1,71 @@
+<% @bedrijf.contacts.build if @bedrijf.contacts.empty? %>
+<% form_for([@category, @bedrijf]) do |f| %> <%= f.error_messages %>
+<table class="formulier">
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td><%= f.label :naam %></td>
+            <td><%= f.text_field :naam %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :adres %></td>
+            <td><%= f.text_field :adres %></td>
+          </tr>
+
+
+          <tr>
+            <td><%= f.label :postcode %></td>
+            <td><%= f.text_field :postcode %></td>
+          </tr>
+
+
+          <tr>
+            <td><%= f.label :plaats %></td>
+            <td>  <%= f.text_field :plaats %></td>
+          </tr>
+
+
+          <tr>
+            <td><%= f.label :telnr %></td>
+            <td><%= f.text_field :telnr %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :faxnr %></td>
+            <td><%= f.text_field :faxnr %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :webadres %></td>
+            <td><%= f.text_field :webadres %></td>
+          </tr>
+
+          <tr>
+            <td><%= f.label :kvk %></td>
+            <td><%= f.text_field :kvk %></td>
+          </tr>
+
+
+        </table>
+      </td>
+      <td>
+        <h2>Contact</h2>
+        <% f.fields_for :contacts do |cf| %>
+          <p> <%= cf.label :contact_name, 'Contact:' %>
+            <%= cf.text_field :contact_name %>
+          </p>
+          <% unless cf.object.nil? || cf.object.new_record? %>
+            <p> <%= cf.label :_delete, 'Remove:' %>
+              <%= cf.check_box :_delete %>
+            </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Opslaan" %></td>
+    </tr>
+  </table>
+  
+<% end %>

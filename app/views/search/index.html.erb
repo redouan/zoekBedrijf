@@ -1,0 +1,24 @@
+<h1 class="welkom">Bedrijven</h1>
+<div id="midden">
+<ol class="message_list">
+  <% for bedrijf in @bedrijfs %>
+    <li>
+      <p class="message_head"><cite><%=h bedrijf.naam %></cite></p>
+      <div class="message_body">
+        <p><%=h bedrijf.adres %><br />
+          <%=h bedrijf.plaats %><br />
+          Kvk: <%=h bedrijf.kvk %><br />
+          <% if bedrijf.status %>
+            <%=h bedrijf.status %><br />
+
+          <% else %>
+            Actief<br />
+          <% end %>
+          <a><%=h bedrijf.webadres %></a><br />
+        </p>
+      </div>
+    </li>
+  <% end %>
+</ol>
+<p class="collapse_buttons"><a href="#" class="show_all_message">Laat alles zien</a> <a href="#" class="show_recent_only">Laat 5 zien</a></p>
+</div>

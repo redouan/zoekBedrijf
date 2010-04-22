@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Users: <%= controller.action_name %></title>
+    <%= stylesheet_link_tag "style" %>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $(".menu a").hover(function() {
+          $(this).next("em").animate({opacity: "show", top: "-75"}, "slow");
+        }, function() {
+          $(this).next("em").animate({opacity: "hide", top: "-85"}, "fast");
+        });
+
+
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        //hide message_body after the first one
+        $(".message_list .message_body:gt(0)").hide();
+
+        //hide message li after the 5th
+        $(".message_list li:gt(4)").hide();
+
+
+        //toggle message_body
+        $(".message_head").click(function(){
+          $(this).next(".message_body").slideToggle(500)
+          return false;
+        });
+
+        //collapse all messages
+        $(".collpase_all_message").click(function(){
+          $(".message_body").slideUp(500)
+          return false;
+        });
+
+        //show all messages
+        $(".show_all_message").click(function(){
+          $(this).hide()
+          $(".show_recent_only").show()
+          $(".message_list li:gt(4)").slideDown()
+          return false;
+        });
+
+        //show recent messages only
+        $(".show_recent_only").click(function(){
+          $(this).hide()
+          $(".show_all_message").show()
+          $(".message_list li:gt(4)").slideUp()
+          return false;
+        });
+
+      });
+    </script>
+
+  </head>
+  <body>
+    <div id="site">
+      <div id="logo">
+        <div id="logo_left">
+
+        </div>
+        <div id="logo_right">
+          <br />
+          <br />
+          <% form_tag :controller => 'search', :action => 'search', :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search", :name => nil %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <div id="menu">
+        <div id="nav">
+          <% if @user = @current_user %>
+            <ul id="navigation">
+              <li><a><%= link_to "Profiel", :controller => 'profiels', :action => 'show' %></a></li>
+              <li>|</li>
+              <li><a> <%= link_to "Categorie", categories_path %></a></li>
+              <li>|</li>
+              <li><a><%= link_to "Logout", logout_path %></a></li>
+            </ul>
+          <% else %>
+            <ul id="navigation">
+              <li><%= link_to "Login", :controller => 'user_sessions', :action => 'new' %></li>
+              <li>|</li>
+              <li><%= link_to "Bedrijven", :controller => 'search', :action => 'index' %></li>
+              <li>|</li>
+              <li><%= link_to "Registreren", new_account_path %></li>
+            </ul>
+          <% end %>
+        </div>
+
+
+      </div>
+      <div id="content">
+
+        <div id="notice">
+          <p>
+            <%= flash[:notice] %>
+          </p>
+        </div>
+
+        <%= yield %>
+      </div>
+
+    </div>
+    <div id="foot">
+        <table class="info">
+          <tr>
+            <td width="200">
+              Memocom B.v<br />
+              Postbus 91040<br />
+              3007 MA Rotterdam
+            </td>
+            <td width="200">
+              KvK 24329956<br />
+              Strevelsweg 700/509<br />
+              3083 AS Rotterdam
+
+            </td>
+            <td width="200">
+              Tel: +31 (0)10 483 30 55<br />
+              Tel: +31 (0)10 483 31 19<br />
+              www.memocom.nl
+            </td>
+          </tr>
+        </table>
+    </div>
+
+  </body>
+</html>

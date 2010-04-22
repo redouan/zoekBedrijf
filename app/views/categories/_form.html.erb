@@ -1,0 +1,29 @@
+<table class="formulier">
+<% form_for(@category) do |f| %>
+  <%= f.error_messages %>
+  <tr>
+    <td>
+      <%= f.label "Naam" %>
+    </td>
+    <td>
+      <%= f.text_field :naam %>
+    </td>
+
+  </tr>
+  <tr>
+    <td>
+      <%= f.label "Beschrijving" %>
+    </td>
+    <td>
+      <%= f.text_field :beschrijving %>
+    </td>
+
+  </tr>
+  <tr>
+    <td>
+      <%= f.submit "Opslaan" %>
+    </td>
+  </tr>
+
+<% end %>
+</table>

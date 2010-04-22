@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Naam</th>
+    <th>Plaats</th>
+
+  </tr>
+
+<% for bedrijf in @bedrijfs %>
+  <tr>
+    <td><%=h bedrijf.naam %></td>
+    <td><%=h bedrijf.plaats %></td>
+    <td><%= link_to 'Show', :controller => 'search', :action => 'show', :id=> bedrijf.id %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'Back to Categories', categories_path %>

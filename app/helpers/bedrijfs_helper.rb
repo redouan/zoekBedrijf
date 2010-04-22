@@ -1,0 +1,2 @@
+module BedrijfsHelper
+end

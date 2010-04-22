@@ -1,0 +1,17 @@
+<h2 class="title">Categorie info</h2>
+<table class="formulier">
+  <tr>
+    <td width="120">Name:</td>
+    <td> <%=h @category.naam %></td>
+  </tr>
+  <tr>
+    <td width="120">Description:</td>
+    <td><%=h @category.beschrijving %></td>
+  </tr>
+  <tr>
+    <td class="red"><%= link_to 'Bewerk Categorie', edit_category_path(@category) %></td>
+    <td class="red"><%= link_to 'Terug Naar Categories', categories_path %></td>
+  </tr>
+
+
+</table>

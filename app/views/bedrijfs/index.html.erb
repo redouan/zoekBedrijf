@@ -1,0 +1,33 @@
+<h2 class="title">Lijst bedrijven</h2>
+
+<table class="formulier">
+  <tr>
+    <th>Naam</th>
+    <th>Plaats</th>
+    <th>Kvk</th>
+    <th>Website</th>
+
+  </tr>
+
+  <% for bedrijf in @bedrijfs %>
+    <tr>
+      <td width="170"><%=h bedrijf.naam %></td>
+      <td width="80"><%=h bedrijf.plaats %></td>
+      <td width="80"><%=h bedrijf.kvk %></td>
+      <td width="80"><%=h bedrijf.webadres %></td>
+      <td class="red"><%= link_to 'Show', category_bedrijf_path(@category, bedrijf) %></td>
+      <td class="red"><%= link_to 'Edit', edit_category_bedrijf_path(@category, bedrijf) %></td>
+      <td class="red"><%= link_to 'Destroy', category_bedrijf_path(@category, bedrijf), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+
+  <% end %>
+  <tr>
+
+    <td class="red"><%= link_to 'Toevoegen', new_category_bedrijf_path(@category) %></td>
+    <td class="red"><%= link_to 'Terug', categories_path %></td>
+  </tr>
+
+</table>
+
+<br />
+

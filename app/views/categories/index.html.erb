@@ -1,0 +1,15 @@
+<h1 class="welkom">Categories</h1>
+<div id="tes">
+  <p class="red"><%= link_to 'Nieuwe Categorie Maken', new_category_path %></p>
+  
+  <ul class="menu">
+    <% @categories.each do |category| %>
+      <li>
+        <%= link_to category.naam, :controller => "bedrijfs", :action => "index", :category_id => category.id %><%= "(#{category.bedrijfs.count})" -%>
+        <em><%=h category.beschrijving %></em>
+      </li>
+
+    <% end %>
+  </ul>
+  
+</div>
